@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="SKSwapChainPanelOpenGLUnloadedIssue.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SKSwapChainPanelOpenGLUnloadedIssue"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:skia="using:SkiaSharp.Views.Windows"
+    mc:Ignorable="d"
+    Title="SKSwapChainPanelOpenGLUnloadedIssue">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid RowDefinitions="Auto,*" Padding="12" RowSpacing="12">
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button x:Name="StressButton" Content="Start add/remove stress" Click="StressButton_OnClick" />
+            <Button x:Name="PinnedStressButton" Content="Start stress (opengl32 pinned)" Click="PinnedStressButton_OnClick" />
+            <TextBlock x:Name="StatusText" VerticalAlignment="Center" />
+        </StackPanel>
+        <Grid x:Name="MainPanelHost" Grid.Row="1">
+            <skia:SKSwapChainPanel PaintSurface="MainPanel_OnPaintSurface" />
+        </Grid>
+    </Grid>
+</Window>

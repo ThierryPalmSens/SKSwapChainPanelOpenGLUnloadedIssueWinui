@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "SKSwapChainPanelOpenGLUnloadedIssue (Package)": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": true
+    },
+    "SKSwapChainPanelOpenGLUnloadedIssue (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
